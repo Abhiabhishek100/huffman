@@ -1,11 +1,5 @@
 import heapq
 import os
-
-"""
-author: Bhrigu Srivastava
-website: https:bhrigu.me
-"""
-
 class HuffmanCoding:
 	def __init__(self, path):
 		self.path = path
@@ -30,9 +24,6 @@ class HuffmanCoding:
 			if(not isinstance(other, HeapNode)):
 				return False
 			return self.freq == other.freq
-
-	# functions for compression:
-
 	def make_frequency_dict(self, text):
 		frequency = {}
 		for character in text:
@@ -82,8 +73,6 @@ class HuffmanCoding:
 		for character in text:
 			encoded_text += self.codes[character]
 		return encoded_text
-
-
 	def pad_encoded_text(self, encoded_text):
 		extra_padding = 8 - len(encoded_text) % 8
 		for i in range(extra_padding):
@@ -129,7 +118,7 @@ class HuffmanCoding:
 		return output_path
 
 
-	""" functions for decompression: """
+	
 
 
 	def remove_padding(self, padded_encoded_text):
@@ -175,6 +164,6 @@ class HuffmanCoding:
 			
 			output.write(decompressed_text)
 
-		print("Decompressed")
+		print("Decompressed file")
 		return output_path
 
